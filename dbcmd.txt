@@ -1,0 +1,64 @@
+create table mycustomer
+(
+ custid int PRIMARY KEY NOT NULL,
+ cname  varchar(100)
+)
+
+----------------------------------------------------------------------------------
+create table mysalesman
+(
+ salesid int PRIMARY KEY NOT NULL,
+ sname  varchar(100)
+)
+-----------------------------------------------------------------------------------
+
+create table myorders
+(
+ orderid int,
+ PRIMARY KEY(orderid),
+ cid int,
+ sid int,
+ FOREIGN KEY (cid) REFERENCES mycustomer (custid),  
+ FOREIGN KEY (sid) REFERENCES mysalesman (salesid)  
+ )
+
+---------------------------------------------------------------------------------------
+
+insert into mycustomer values (101,'ram');
+insert into mycustomer values (102,'priya');
+insert into mycustomer values (103,'aanchal');
+insert into mycustomer values (104,'rahul');
+insert into mycustomer values (105,'chirag');
+insert into mycustomer values (106,'preeti');
+----------------------------------------------------------------------------------
+
+insert into mysalesman values (201,'chroma');
+---------------------------------------------------------------------------------
+
+insert into myorders values (201,101,201);
+
+---------------------------------------------------------------------------------
+(ques 5) 
+select * from mysalesman
+where salesid in (select sid from myorders group by sid having count(sid)>1);
+
+---------------------------------------------------------------------------------
+(ques 6)
+select s.salesid,s.sname,m.orderid,m.sid from mysalesman s, myorders m
+where s.salesid=m.sid;
+
+---------------------------------------------------------------------------------------
+(ques 7)
+create index custindex
+on mycustomer (custid);
+
+------------------------------------------------------------------------------------------
+(ques 8)
+
+show index from mycustomer;
+       
+----------------------------------------------------------------------------------------
+(ques 9)
+select c.custid,c.cname,s.salesid,s.sname,m.orderid from mycustomer c,mysalesman s, myorders m
+where s.salesid=m.sid AND c.custid=m.cid;
+
