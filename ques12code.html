@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <title>My form</title>
+</head>
+<body>
+
+<!--This is header-->
+<div class="header">
+    <a href="/" class="logo gfont">TO THE NEW</a>
+    <div class="right-link">
+
+        <a href="/home" class="gfont">Home</a>
+        <a href="/quick help" class="gfont">Quick Help</a>
+    </div>
+</div>
+
+<hr class="clear-all">
+
+<!--This is the whole form-->
+
+<div>
+    <form class="form-style topborder">
+
+        <!--This is the heading for form-->
+        <div class="form-header ">
+           <p class="fh-title gfont" >Bug Report</p>
+        </div>
+
+        <!--Form starts here-->
+        <div class="form-style1">
+
+            <label class="tfont">Title:*</label><input class="spacing-edit"  type="text" name="title" required>
+            <label class="tfont">Description:*</label><textarea class="input-round spacing-edit" rows="4" required></textarea>
+
+            <label class="tfont">Operating System:*</label><br>
+            <select class="os drop-text" name="os1" class="spacing-edit">
+                <option value="windowxp">Window XP</option>
+                <option value="window7">Window 7</option>
+                <option value="window10">Window 10</option>
+            </select>
+            <br>
+
+            <label class="tfont">Product:*</label><br>
+            <select class="os drop-text" name="product" class="spacing-edit" required>
+                <option value="formoid">Formoid</option>
+                <option value="abc">ABC</option>
+                <option value="xyz">XYZ</option>
+            </select>
+             <br>
+
+            <label class="tfont">Version:*</label>
+            <br><input class=" spacing-edit" id="version-style" type="text" name="title" required>
+            <br>
+
+            <label class="tfont">Licence:*</label><br>
+            <input type="radio" name="version" value="free"> Free
+            <input  type="radio" name="version" value="business"> Business
+            <br><br>
+
+            <label class="tfont">Severity:*</label><br>
+            <select class="os drop-text" name="severity1" class="spacing-edit">
+                <option value="critical">Critical</option>
+                <option value="abc">ABC</option>
+                <option value="xyz">XYZ</option>
+            </select>
+            <br>
+
+            <label class="tfont">Attachment:*</label><br>
+            <input type="file" name="myFile">
+            <br>
+            <br>
+
+        </div>
+        <!-- End form style -->
+
+        <div class="footer">
+            <input type="submit" value="Send">
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>
