@@ -1,0 +1,52 @@
+body{
+    background-color: rgba(84,84,84,0.95);
+}
+
+#mybrand{
+color: #ffffff;
+    font-size: 40px
+}
+h1{
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#ref-style a{
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+#firstsection{
+    background-color: #545454;
+
+
+}
+
+#secondsection{
+
+    height: auto;
+    background-color: #ffffff;
+    width: auto;
+}
+#img-style{
+margin-top: 10px;
+}
+
+#caption-style{
+    background-color: rgba(139, 139, 139, 0.2);
+    border-radius: 2px;
+   }
+
+.shift-style{
+    padding-left: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+
+}
+
+#footer-style{
+    background-color: black;
+}
+#footer-style p{
+    color: #ffffff;
+}
