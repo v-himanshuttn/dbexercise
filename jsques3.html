@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        p{
+            color: brown;
+        }
+
+        input[type=submit]
+        {
+            background-color: #15a0ff;
+            font-size: 16px;
+            color: #ffffff;
+            border-radius:10px ;
+            padding: 14px 10px;
+        }
+        input[type=text]
+        {
+            border-radius:10px ;
+            padding: 12px 8px;
+
+        }
+    </style>
+</head>
+<body>
+<script>
+
+    function cal_area_of_Circle() {
+
+        //Take radius value from user
+        var rvalue=parseInt(document.getElementById("radius").value);
+        console.log(rvalue);
+        var area_of_circle=(3.14*rvalue*rvalue);
+        console.log(area_of_circle);
+        document.getElementById("area").value=area_of_circle;
+    }
+</script>
+
+
+<p>
+    Click Here to calculate the area of Circle ..
+</p>
+<input type="text" id="radius" placeholder="Enter the radius"><br><br>
+<input type="text" id="area" placeholder="Here area will be display."><br><br>
+<input type="submit" value="Click Me" onclick="cal_area_of_Circle()">
+</body>
+</html>

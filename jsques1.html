@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        p{
+            color: brown;
+        }
+
+        input[type=submit]
+        {
+            background-color: #15a0ff;
+            font-size: 16px;
+            color: #ffffff;
+            border-radius:10px ;
+            padding: 14px 10px;
+        }
+    </style>
+</head>
+<body>
+<script>
+
+    function simpleInterest() {
+
+        //Take amount, interest, no of year from user
+        var amount=prompt("Enter the amount for calculate the SI");
+        var interest=prompt("Enter the interest rate for calculate the SI");
+        var nyear=prompt("Enter the no of year for calculate the SI");
+
+        var simple_interest= (amount*interest*nyear)/100;
+
+        alert("You have entered amount and interest and nyear is :"+amount+" ,"+interest+" ,"+nyear);
+        alert("The Simple Interest is : "+simple_interest);
+
+    }
+</script>
+
+
+<p>
+    Click Here to calculate the Simple Interest..
+</p>
+<input type="submit" value="Click Me" onclick="simpleInterest()">
+</body>
+</html>

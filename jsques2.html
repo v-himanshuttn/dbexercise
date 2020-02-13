@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        p{
+            color: brown;
+        }
+
+        input[type=submit]
+        {
+            background-color: #15a0ff;
+            font-size: 16px;
+            color: #ffffff;
+            border-radius:10px ;
+            padding: 14px 10px;
+        }
+    </style>
+</head>
+<body>
+<script>
+
+    function checkPalindrome() {
+
+        //Take string from user
+        var inputstr=prompt("Enter the string for check the palindrome");
+        alert("Your entered string is :"+inputstr);
+
+        //logic
+        var length_str=inputstr.length;
+
+        let i;
+        let flag=1;
+
+        for(i=0;i<length_str/2-1;i++)
+        {
+            if(inputstr.charAt(i)===inputstr.charAt(length_str-i-1))
+            {
+                flag=0;
+            }
+            else
+            {
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0)
+        {            alert("String is palindrome.. ");
+        }
+        else
+        {            alert("String is not palindrome.. ")
+        }
+    }
+</script>
+
+
+<p>
+    Click Here to check the palindrome of string ..
+</p>
+<input type="submit" value="Click Me" onclick="checkPalindrome()">
+</body>
+</html>

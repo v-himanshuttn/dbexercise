@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        p{
+            color: brown;
+        }
+
+        input[type=button]
+        {
+            background-color: #15a0ff;
+            font-size: 16px;
+            color: #ffffff;
+            border-radius:10px ;
+            padding: 14px 10px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+
+    //Shallow Copy
+    function myShallow() {
+        var obj1 = {
+            name: 'kamal',
+            id: 12
+        };
+
+        console.log("The obj1 data is :", obj1);
+        var obj2 = obj1;
+        console.log("The obj2 data is :", obj2);
+
+        //lets change some value
+        obj2.name = "himanshu";
+        //print data of obj1
+        console.log("Now the obj1 data is :", obj1);
+    }
+
+
+
+    //Deep Copy
+    function myDeep() {
+        var obj3 = {
+            name: 'kamal',
+            id: 12
+        };
+
+        console.log("The obj3 data is :", obj3);
+
+        var obj4={};
+        for(var key in obj3)
+        {
+            obj4[key]=obj3[key];
+        }
+
+        console.log("The obj4 data is :", obj4);
+
+        //lets change in obj4 and see
+        obj4.name= "himanshu";
+        console.log("The obj4 data is :",obj4);
+        console.log("The obj3 data is :", obj3);
+
+    }
+</script>
+
+
+<p>
+    Press 'Shallow' button for Shallow Copy ..
+</p>
+<p>
+    Press 'Deep' button for Deep Copy ..
+</p>
+
+<input type="button" value="Shallow" onclick="myShallow()">
+<input type="button" value="Deep" onclick="myDeep()">
+
+
+</body>
+</html>

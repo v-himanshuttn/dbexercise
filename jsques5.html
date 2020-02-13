@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        p{
+            color: brown;
+        }
+
+        input[type=button]
+        {
+            background-color: #15a0ff;
+            font-size: 16px;
+            color: #ffffff;
+            border-radius:10px ;
+            padding: 14px 10px;
+        }
+        input[type=text],input[type=date],input[type=number]
+        {
+            border-radius:10px ;
+            padding: 12px 8px;
+
+        }
+
+        table,th,td{
+
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+
+    var empdata=[];
+    function Employee(name,age,salary,dob)
+    {
+        this.name=name;
+        this.age=age;
+        this.salary=salary;
+        this.dob=dob;
+    }
+
+    // ----------------------------------------------------------------
+
+    function myfetch() {
+        console.log(empdata);
+        var html="<table><tr><th>Name</th><th>Age</th><th>Salary</th><th>Dob</th></tr>"
+
+        empdata.forEach(function (item) {
+                html+="<tr><td>"+item.name+"</td><td>"+item.age+"</td><td>"+item.salary+"</td><td>"+item.dob+"</td></tr>";
+        })
+
+        html+="</table>";
+
+        document.getElementById("alldata").innerHTML=html;
+
+    }
+
+// ----------------------------------------------------------------------
+
+    function fillup() {
+        var name=document.getElementById("name").value;
+        var age=parseInt(document.getElementById("age").value);
+        var salary=document.getElementById("salary").value;
+        var dob=document.getElementById("dob").value;
+
+        console.log(name+"|"+age+"|"+salary+"|"+dob);
+
+        var eobj=new Employee(name,age,salary,dob);
+        empdata.push(eobj);
+
+    }
+
+// ---------------------------------------------------------------------------------------
+    function myOperation1() {
+        var op1res="<div>"
+
+        empdata.forEach(function (item) {
+
+            if(item.salary>5000)
+            {
+                op1res+="<span>"+item.name+"</span><br>";
+            }
+             })
+        op1res+="</div>";
+
+
+        document.getElementById("opres1").innerHTML=op1res;
+
+    }
+
+
+    // --------------------------------------------------------------------------------------
+
+    function myOperation1() {
+        var op1res="<div>"
+
+        empdata.forEach(function (item) {
+
+            if(item.salary>5000)
+            {
+                op1res+="<span>"+item.name+"</span><br>";
+            }
+        })
+        op1res+="</div>";
+
+
+        document.getElementById("opres1").innerHTML=op1res;
+
+    }
+
+    // --------------------------------------------------------------------------------------
+
+    function myOperation2() {
+        var op2res="<div>"
+        var op21res="<div>"
+
+        empdata.forEach(function (item) {
+
+            if(item.age >10 && item.age<=20)
+            {
+                op2res+="<span>"+item.name+"</span><br><span>"+item.age+"</span><br>";
+            }
+            else if(item.age>20 && item.age<=40)
+            {
+                op21res+="<span>"+item.name+"</span><br><span>"+item.age+"</span><br>";
+
+            }
+        })
+        op2res+="</div>";
+        op21res+="</div>";
+
+
+        document.getElementById("opres2").innerHTML=op2res;
+        document.getElementById("opres21").innerHTML=op21res;
+
+    }
+
+
+
+    // --------------------------------------------------------------------------------------
+
+
+    function myOperation3() {
+        var op3res="<div>"
+
+        empdata.forEach(function (item) {
+
+            if(item.salary<1000 && item.age>20)
+            {
+                op3res+="<span>"+item.name+"</span><br><span>"+(item.salary)*5+"</span>";
+            }
+        })
+        op3res+="</div>";
+
+
+        document.getElementById("opres3").innerHTML=op3res;
+
+    }
+
+</script>
+
+
+<p>
+    Fill the details of Employee ..
+</p>
+<form>
+
+    <input type="text" id="name" placeholder="Enter the Name."><br><br>
+    <input type="number" id="age" placeholder="Enter the age."><br><br>
+    <input type="text" id="salary" placeholder="Enter the salary."><br><br>
+    <input type="date" id="dob" placeholder="Enter the date of birth."><br><br>
+
+    <input type="button" value="Save Data" onclick="fillup()">
+    <br>
+    <input type="button" value="Fetch Data" onclick="myfetch()">
+    <br>
+
+
+    <p>filter all employees with salary greater than 5000</p>
+    <input type="button" value="Fetch Data" onclick="myOperation1()">
+    <br>
+
+
+    <p>group employee on the basis of their age</p>
+    <input type="button" value="Fetch Data" onclick="myOperation2()">
+
+    <br>
+    <p>fetch employees with salary less than 1000 and age greater than 20. Then give them an increment 5 times their salary.
+    </p>
+    <input type="button" value="Fetch Data" onclick="myOperation3()">
+
+
+
+    <p>All records is here...</p>
+    <div id="alldata"></div>
+
+
+    <p>RESULT of emp salary greater than 5000...</p>
+    <div id="opres1"></div>
+
+
+    <p>Group basis on age...</p>
+
+    <p>between 10 to 20...</p>
+    <div id="opres2"></div>
+
+    <p>between 20 to 40.</p>
+    <div id="opres21"></div>
+
+
+    <p>salary less than 1000 and age greater than 20. Then give them an increment 5 times their salary.</p>
+    <div id="opres3"></div>
+
+</form>
+
+
+</body>
+</html>
