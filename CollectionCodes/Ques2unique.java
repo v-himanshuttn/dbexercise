@@ -1,28 +1,40 @@
 package mycollection;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Ques2unique {
     public static void main(String[] args) {
-        //Creating Hashset
-        Set<Character> s=new HashSet<>();
-
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter string..");
+        Map<Character,Integer> m=new HashMap<>();
+        System.out.println("Enter the string..");
         String str=sc.nextLine();
         String str1=str.replace(" ","");
-        char str2[]=str.toCharArray();
         System.out.println(str1);
 
-        //Adding element in haashup
-        for(int i=0;i<str2.length;i++)
+        char []ch=str1.toCharArray();
+        int kval;
+
+        for (int i=0;i<ch.length;i++)
         {
-            s.add(str2[i]);
+            if(m.containsKey(ch[i]))
+            {
+                kval=m.get(ch[i]);
+                m.put(ch[i],kval+1);
+
+            }
+            else
+            {
+                m.put(ch[i],1);
+            }
         }
-        System.out.println(s);
+
+        System.out.println("Unique Character");
+        for(Map.Entry<Character,Integer> entry :m.entrySet())
+        {
+            if(entry.getValue()<2) {
+                System.out.println(entry.getKey());
+            }
+        }
 
     }
 
