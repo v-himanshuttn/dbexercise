@@ -1,0 +1,61 @@
+apply plugin: 'java'
+sourceSets {
+    main {
+        java.srcDirs = ['src/main/javaCode1','src/main/javaCode2']
+    }
+
+
+//    //This is for Ques 2
+//    main{
+//        java.srcDirs=['src']
+//    }
+
+}
+
+dependencies{
+    // Question 3
+    // The different dependency scopes: compile, runtime, testCompile, testRuntime
+    //compile
+    compile group:'commons-io',name:'commons-io',version:'2.6'
+
+//    //runtime
+//    runtime group:org.apache.httpcomponents,name:'httpclient',version: '4.5.1'
+//
+//    //testCompile
+//    testCompile group: 'junit', name: 'junit', version: '4.8'
+
+  }
+repositories{
+    mavenCentral()
+}
+
+// Question 2
+// Change in manifest file and make the jar executable
+// Command : java -jar FirstGradle.jar
+//
+//jar {
+//    manifest {
+//        attributes 'Main-Class': 'Question2'
+//    }
+//}
+//
+
+
+
+//-----------------------------------------------------------------------------
+
+// Question 4
+// Create a custom plugin which contains a custom task which prints the current date-time.
+class DatePlugin implements Plugin<Project>
+{
+    @Override
+    void apply(Project project) {
+        project.task('DateTask'){
+            dependsOn('build')
+            doLast {
+                println("My date is : "+new Date());
+            }
+        }
+    }
+}
+apply plugin:DatePlugin;
