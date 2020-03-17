@@ -1,0 +1,38 @@
+****************************
+ In project "springbootjpa3"
+****************************
+
+   1 Create a class Address for Author with instance variables streetNumber, location, State.
+   2 Create instance variable of Address class inside Author class and save it as embedded object.
+   3 Introduce a List of subjects for author.
+   4 Persist 3 subjects for each author.
+   7 Implement One to Many Mapping between Author and Book(Unidirectional, BiDirectional and without additional table ) and implement cascade 	 save.
+  
+
+-------------------------------------------------------------------------------------------------------------------
+
+***********************************
+ In project "springbootjpa3more"
+***********************************
+
+   5 Create an Entity book with an instance variable bookName.
+   6 Implement One to One mapping between Author and Book.
+   8 Implement Many to Many Mapping between Author and Book.
+
+
+
+
+
+   9 Which method on the session object can be used to remove an object from the cache?
+
+	evict() method is used to remove the entry from cache.
+
+	Session session=entityManager.unwrap(Session.class);
+	session.evict()
+
+   10 What does @transactional annotation do?
+
+	If we put @Transactional annotation on method
+	then if it fails somehow in between,the changes is revert back and jump to its initial state.
+
+
